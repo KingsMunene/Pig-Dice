@@ -1,55 +1,128 @@
 //business logic//
 //created by kings munene//
-var current = [];
-var current1 = [];
-var total = [];
-var total1 = [];
+var total = 49;
+var total1 = 0;
+
 var sorrymsg = ("sorry you rolled a one, next player please!");
-var sorrymsg2 = ("sorry you rolled a one, next player please!");
 
 //UI logic//
+//players function//
 
-//playerone function//
-$(document).ready(function()
- {$("#roll1").click(function()
-  { event.preventDefault();
+$(document).ready(  
+  function(){
+    //Function for roll button for player 1
+  $("#roll").click(
+    
+  function(){
     var score = Math.floor((Math.random()*6)+1);
-    $("#current").text(score);
-    var total = add(current);
-    if (current == 1){
-      $("#roll2").show();
-      $("#roll1").hide();
-      $("#sorry").text(sorrymsg);
-    };
-  });
-});
+    if(score != 1){
 
-$(document).ready(function(){
-  $("#hold1").click(function(){
+      total += score;
+      winnergen()
+
+    }else{
+      $("#roll").hide()
+
+      $("#hold").hide()
+
+      $("#hold1").show()
+      $("#roll1").show()
+      $("#sorry").text(sorrymsg)
+      $("#sorry1").text("")
+      total = 0
+    }
+
+    $("#current").text(score)
+
+    $("#total").text(total)
+
     event.preventDefault();
-    var total = add(current);
-    $("total1").text(total);
-  });
-});
+  })
 
-$(document).ready(function(){
-  $("#roll2").click(function(){
-     event.preventDefault();
+  // Hold button function for player one
+  $("#hold").click(
+    function(){
+      hidePOneButtons();
+
+      showPTwoButtons();
+
+      $("#sorry1").text("")
+
+      event.preventDefault();
+    }
+  )
+
+  //Function for roll button for player 2
+  $("#roll1").click(
+    function(){
     var score1 = Math.floor((Math.random()*6)+1);
-    $("#current1").text(score1);
-    if (score == 1){
-      $("#roll1").show();
-      $("#roll2").hide();
-      $("#sorry2").text(sorrymsg2);
-    };
-  });
+
+    if(score1 != 1){
+
+    total1 += score1;
+    winnergen();
+
+  }else{
+
+    hidePTwoButtons();
+
+    $("#sorry").text("");
+    $("#sorry1").text(sorrymsg)
+
+     showPOneButtons();
+
+      event.preventDefault();
+    
+    total1 = 0;
+    
+  }
+  $("#current1").text(score1);
+
+  $("#total1").text(total1);
+
+  event.preventDefault();
+}
+);
+
+//Hold button for player two
+$("#hold1").click(
+  function(){
+    hidePTwoButtons()
+    showPOneButtons()
+    event.preventDefault();
+  }
+)
+event.preventDefault();
 });
 
-$(document).ready(function(){
-  $("#hold2").click(function(){
-    event.preventDefault();
-    var total1 = add(current1);
-    $("total1").text(total1);
-  });
-});
+function hidePOneButtons() {
+  $("#roll").hide();
+  $("#hold").hide();
+}
+
+function showPTwoButtons() {
+  $("#roll1").show();
+
+  $("#hold1").show();
+}
+
+function showPOneButtons() {
+  $("#roll").show();
+
+  $("#hold").show();
+}
+
+function hidePTwoButtons() {
+  $("#roll1").hide();
+
+  $("#hold1").hide();
+}
+
+function winnergen() {
+  if (total >= 50) {
+    $("#winner").text("A win for player One");
+  } else if (total1 == 50) {
+    $("#winner").text("A win for player Two");
+  }
+}
 

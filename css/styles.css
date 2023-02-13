@@ -2,18 +2,17 @@
   text-align: center;
   font-family: 'Finger Paint', cursive;
   font-weight: bold;
-  background-color:#F2F2F2;
-  margin-top: 30px;
-  margin-bottom: 20px;
+  background-color:#17a71e;
   margin-left: 20px;
   margin-right: 20px;
-  padding-bottom: 10px;
-  padding-top: 20px;
+  margin-top: 20px;
+  
 }
 
 .how{
+  backdrop-filter: black;
   background-image: url(../images/pig.jpg);
-  font-family: 'Love Ya Like A Sister', cursive;
+  font-family: 'Love Ya Like A Sister', 'cursive';
   background-attachment: fixed;
 }
 
@@ -21,17 +20,17 @@
   font-weight: bolder;
   font-size: 20px;
 }
-.game{
+.play-game{
   background-color: #2ecc71;
-  color: white;
+  color: black;
   width: 25%;
-  margin: 0 auto;
   padding: 20px;
-  text-align: center;
+  position: 100%;
   border-radius: 25px;
 }
 .intro{
   background-image: url(../images/bck.jpg);
+  text-align: center;
 
 }
 .playerone{
@@ -39,39 +38,29 @@
   width: 50%;
   float: left;
   height: 800px;
-  font-family: 'Akronim', cursive;
   font-size: 40px;
+  color: #081a18;
 }
 
 .playertwo{
   text-align: center;
   width: 50%;
+  height: 25.1em;
   float: right;
-  height: 800px;
+  color: #081a18;
   background-color:#4ECDC4;
-  font-family: 'Akronim', cursive;
   font-size: 40px;
 }
 #total{
   font-size: 30px;
-  color: #4ECDC4;
+  color: #081a18;
   margin: 50px;
-  
+}
 #total1{
-  color:#4ECDC4;
+  color:#081a18;
   font-size: 30px;
   margin: 50px;
 
-}
-#current{
-  color: #4ECDC4;
-  font-size: 30px;
-  margin: 50px;
-}
-#current1{
-  color:#4ECDC4;
-  font-size: 30px;
-  margin: 50px;
 }
 .header{
   font-family: 'Cabin Sketch', cursive;
@@ -95,14 +84,16 @@
 
 .paragraph{
   font-size: 30px;
+  font-weight: 100%;
   line-height: 50px;
   color: black;
   animation: glow 2s ease-in-out infinite alternate;
 }
 @keyframes glow {
   from {
-    text-shadow: 0 0 10px white;
+    text-shadow: 0 0 200px rgb(139, 15, 15);
   }
   to {
-    text-shadow: 0 0 30px #000046;
+    text-shadow: 0 0 50px #28881f;
   }
+}
