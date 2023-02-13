@@ -3,7 +3,7 @@
 var total = 0;
 var total1 = 0;
 
-var sorrymsg = ("Oops! You rolled a one, Back to zero pig. Next player please!");
+var sorrymsg = ("Oops! You rolled a one, Greedy Pig. Next player please!");
 
 //UI logic//
 //players function//
@@ -29,7 +29,7 @@ $(document).ready(
       $("#roll1").show()
       $("#sorry").text(sorrymsg)
       $("#sorry1").text("")
-      total = 0
+      total = total
     }
 
     $("#current").text(score)
@@ -72,7 +72,7 @@ $(document).ready(
 
       event.preventDefault();
     
-    total1 = 0;
+    //total1 = total;
     
   }
   $("#current1").text(score1);
