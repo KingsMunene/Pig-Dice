@@ -1,9 +1,9 @@
 //business logic//
 //created by kings munene//
-var total = 0;
+var total = 49;
 var total1 = 0;
 
-var sorrymsg = ("sorry you rolled a one, next player please!");
+var sorrymsg = ("Oops! You rolled a one, Back to zero pig. Next player please!");
 
 //UI logic//
 //players function//
@@ -65,7 +65,6 @@ $(document).ready(
   }else{
 
     hidePTwoButtons();
-
     $("#sorry").text("");
     $("#sorry1").text(sorrymsg)
 
@@ -87,12 +86,15 @@ $(document).ready(
 //Hold button for player two
 $("#hold1").click(
   function(){
+    $("#sorry").text("");
     hidePTwoButtons()
     showPOneButtons()
     event.preventDefault();
   }
 )
 event.preventDefault();
+restartgame()
+
 });
 
 function hidePOneButtons() {
@@ -108,21 +110,36 @@ function showPTwoButtons() {
 
 function showPOneButtons() {
   $("#roll").show();
-
   $("#hold").show();
 }
 
 function hidePTwoButtons() {
   $("#roll1").hide();
-
   $("#hold1").hide();
+}
+
+function hideAll(){
+  hidePOneButtons()
+  hidePTwoButtons()
+}
+
+function showAll(){
+  showPOneButtons()
+  showPTwoButtons()
 }
 
 function winnergen() {
   if (total >= 50) {
     $("#winner").text("A win for player One");
-  } else if (total1 == 50) {
+    hideAll()
+  } else if (total1 >= 50) {
     $("#winner").text("A win for player Two");
+    hideAll()
   }
 }
 
+function restartgame(){
+      showAll()
+      total = 0;
+      total1 = 0;
+}

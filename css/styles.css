@@ -2,13 +2,20 @@
   text-align: center;
   font-family: 'Finger Paint', cursive;
   font-weight: bold;
-  background-color:#17a71e;
+  background-color:#00A4A6;
   margin-left: 20px;
   margin-right: 20px;
   margin-top: 20px;
   
 }
+#winner{
+  margin-top:0cap;
+}
 
+.res{
+  text-align: center;
+  margin-top: 29%;
+}
 .how{
   backdrop-filter: black;
   background-image: url(../images/pig.jpg);
@@ -21,34 +28,50 @@
   font-size: 20px;
 }
 .play-game{
-  background-color: #2ecc71;
+  background-color: #2ec1cc;
   color: black;
   width: 25%;
   padding: 20px;
-  position: 100%;
   border-radius: 25px;
+}
+.restart-game{
+  background-color: #2ec1cc;
+  color: black;
+  width: 25%;
+  padding: 15px;
+  border-radius: 25px;
+  text-align: center;
+}
+.results {
+  text-align: center;
+  font-family: 'Finger Paint', cursive;
+  font-weight: bold;
+  background-color:#abdbe3;
+  margin-left: 70px;
+  margin-right: 70px;
 }
 .intro{
   background-image: url(../images/bck.jpg);
   text-align: center;
-
+  margin-top: 12em;
 }
 .playerone{
   text-align: center;
   width: 50%;
   float: left;
-  height: 800px;
+  height: 550px;
   font-size: 40px;
   color: #081a18;
+  background-color: #eeeee4;
 }
 
 .playertwo{
   text-align: center;
   width: 50%;
-  height: 25.1em;
+  height: 550px;
   float: right;
   color: #081a18;
-  background-color:#4ECDC4;
+  background-color:#dedbd4;
   font-size: 40px;
 }
 #total{
@@ -71,13 +94,6 @@
   animation-duration: 2s infinite;
 }
 
-.p2{
-  font-style: italic;
-  font-size: 40px;
-  font-weight: 500;
-  color: black;
-  font-family: 'Love Ya Like A Sister', cursive;
-}
 .link{
   font-weight: 600;
 }
