@@ -1,6 +1,6 @@
 //business logic//
 //created by kings munene//
-var total = 49;
+var total = 0;
 var total1 = 0;
 
 var sorrymsg = ("sorry you rolled a one, next player please!");
